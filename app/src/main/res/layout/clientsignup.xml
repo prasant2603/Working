@@ -19,43 +19,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First Name"
-        android:id="@+id/first_name1"
+        android:id="@+id/clientFirstname"
         app:layout_constraintTop_toBottomOf="@id/log_in1"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Last Name"
-        android:id="@+id/last_name1"
-        app:layout_constraintTop_toBottomOf="@id/first_name1"/>
+        android:id="@+id/clientSecondname"
+        app:layout_constraintTop_toBottomOf="@id/clientFirstname"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mobile Number"
-        android:id="@+id/phone1"
-        app:layout_constraintTop_toBottomOf="@id/last_name1"/>
+        android:id="@+id/clientPhone"
+        app:layout_constraintTop_toBottomOf="@id/clientSecondname"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-mail"
-        android:id="@+id/email1"
-        app:layout_constraintTop_toBottomOf="@id/phone1"/>
+        android:inputType="textEmailAddress"
+        android:id="@+id/clientEmail"
+        app:layout_constraintTop_toBottomOf="@id/clientPhone"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Country"
-        android:id="@+id/country1"
-        app:layout_constraintTop_toBottomOf="@id/email1"/>
+        android:id="@+id/clientCountry"
+        app:layout_constraintTop_toBottomOf="@id/clientEmail"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:id="@+id/pass1"
-        app:layout_constraintTop_toBottomOf="@id/country1"/>
+        android:inputType="textPassword"
+        android:id="@+id/clientPassword"
+        app:layout_constraintTop_toBottomOf="@id/clientCountry"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="submit"
-        android:id="@+id/submit1"
-        app:layout_constraintTop_toBottomOf="@id/pass1"/>
+        android:id="@+id/clientSignup"
+        app:layout_constraintTop_toBottomOf="@id/clientPassword"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
