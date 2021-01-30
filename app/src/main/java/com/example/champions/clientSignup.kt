@@ -27,15 +27,23 @@ class clientSignup : AppCompatActivity() {
         }
     }
     private fun signup() {
+        val userId:EditText=findViewById(R.id.clientId)
         val name: EditText=findViewById(R.id.clientName)
         val clientNumber: EditText=findViewById(R.id.clientPhone)
         val clientEmail : EditText=findViewById(R.id.clientEmail)
         val clientPassword: EditText=findViewById(R.id.clientPassword)
         val progressbar: ProgressBar=findViewById(R.id.progressBar)
+        var email:String=clientEmail.text.toString()
         if(name.text.toString().isEmpty())
         {
             name.error="Cannot be Empty"
             name.requestFocus()
+            return
+        }
+        if(userId.text.toString().isEmpty())
+        {
+            userId.error="Cannot be Empty"
+            userId.requestFocus()
             return
         }
         if(clientNumber.text.toString().isEmpty())
@@ -74,8 +82,8 @@ class clientSignup : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(baseContext, "Authentication Success.",
                                 Toast.LENGTH_SHORT).show()
-                        var user=User(name.text.toString(),clientNumber.text.toString())
-                        database.child("users").child(clientEmail.text.toString()).setValue(user)
+                        var user=User(name.text.toString(),clientNumber.text.toString(),clientEmail.text.toString())
+                        database.child("users").child(userId.text.toString()).setValue(user)
                         startActivity(Intent(this,clientSignin::class.java))
                     } else {
                         Toast.makeText(baseContext, "Authentication failed.",
