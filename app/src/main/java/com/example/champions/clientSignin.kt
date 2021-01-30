@@ -14,22 +14,38 @@ class clientSignin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.clientsignin)
-        val email : EditText=findViewById(R.id.cemailin)
-        val password: EditText=findViewById(R.id.cpassin)
         val signIn:Button=findViewById(R.id.clogin)
         signIn.setOnClickListener {
-            auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(baseContext, "Login Succesful",
-                            Toast.LENGTH_SHORT).show()
-                    }
-                    else {
-                        // If sign in fails, display a message to the user.
-                        Toast.makeText(baseContext, "Login failed.",
-                            Toast.LENGTH_SHORT).show()
-                    }
-                }
+            signin()
         }
+    }
+
+    private fun signin() {
+        val email : EditText=findViewById(R.id.cemailin)
+        val password: EditText=findViewById(R.id.cpassin)
+        if(email.text.toString().isEmpty())
+        {
+            email.error="Empty Email"
+            email.requestFocus()
+            return
+        }
+        if(password.text.toString().isEmpty())
+        {
+            password.error="Empty Email"
+            password.requestFocus()
+            return
+        }
+        auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(baseContext, "Login Succesful",
+                        Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(baseContext, "Login failed.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }
