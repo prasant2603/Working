@@ -5,17 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".clientSignup">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#64ffda"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SIGN UP"
+        android:text="Create Account"
         android:textSize="31sp"
         android:id="@+id/log_in1"
-        android:textColor="@color/purple_700"
+        android:textColor="#FF6F00"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -23,7 +19,8 @@
         android:id="@+id/clientId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="UserId"
+        android:hint=" UserId"
+        android:drawableStart="@drawable/ic_baseline_perm_identity_24"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +30,8 @@
         android:id="@+id/clientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Full Name"
+        android:hint=" Full Name"
+        android:drawableStart="@drawable/ic_baseline_person_24"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,25 +41,34 @@
         android:id="@+id/clientPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mobile Number"
+        android:hint=" Mobile Number"
+        android:drawableStart="@drawable/ic_baseline_phone_android_24"
         android:inputType="number"
         app:layout_constraintTop_toBottomOf="@+id/clientName"
         tools:ignore="TextFields" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail"
+        android:hint=" Email"
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:inputType="textEmailAddress"
         android:id="@+id/clientEmail"
         app:layout_constraintTop_toBottomOf="@id/clientPhone"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Role"
+        android:drawableStart="@drawable/ic_baseline_emoji_people_24"
+        android:id="@+id/role"
+        app:layout_constraintTop_toBottomOf="@id/clientPassword"/>
 
     <EditText
         android:id="@+id/clientPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint=" Password"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/clientSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clientEmail" />
@@ -71,7 +78,7 @@
         android:layout_height="wrap_content"
         android:text="submit"
         android:id="@+id/clientSignup"
-        app:layout_constraintTop_toBottomOf="@id/clientPassword"/>
+        app:layout_constraintTop_toBottomOf="@id/role"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
