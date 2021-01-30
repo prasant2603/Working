@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeClient">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WELCOME TO KL CONSULTANCY"
+        android:textSize="31dp"
+        android:id="@+id/wel_client"
+        android:textColor="#d500f9"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:src="@drawable/congo2"
+        android:id="@+id/congo2"
+        app:layout_constraintTop_toBottomOf="@id/wel_client"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Query"
+        android:textSize="24dp"
+        android:id="@+id/your_query"
+        android:textColor="#18ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/congo2"
+        android:layout_marginBottom="125dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintTop_toBottomOf="@id/your_query"
+        android:layout_marginTop="56dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

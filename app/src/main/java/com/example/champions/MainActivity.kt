@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
         val button3 = findViewById<Button>(R.id.csignin)
         button3.setOnClickListener {
-            val intent = Intent(this, advisorSignin::class.java)
+            val intent = Intent(this, clientSignin::class.java)
             startActivity(intent)
         }
     }

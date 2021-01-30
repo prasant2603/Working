@@ -1,5 +1,6 @@
 package com.example.champions
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -14,6 +15,11 @@ class clientSignin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.clientsignin)
+        val button = findViewById<Button>(R.id.clogin)
+        button.setOnClickListener {
+            val intent = Intent(this, WelcomeClient::class.java)
+            startActivity(intent)
+        }
         val signIn:Button=findViewById(R.id.clogin)
         signIn.setOnClickListener {
             signin()
