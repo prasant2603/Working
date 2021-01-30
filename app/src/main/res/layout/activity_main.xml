@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PNS Consultancy"
-        android:textSize="31dp"
+        android:textSize="31sp"
         android:textStyle="bold"
         android:gravity="center"
         android:id="@+id/champ"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#FF6F00"
         android:layout_marginTop="12dp"
         android:id="@+id/wel"
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login to Continue"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#FF6F00"
         android:layout_marginTop="12dp"
         android:id="@+id/adv"
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="  Email Address"
-        android:id="@+id/cemailin"
+        android:id="@+id/email"
         android:drawableStart="@drawable/ic_baseline_email_24"
         app:layout_constraintTop_toBottomOf="@id/adv"/>
 
@@ -62,12 +62,12 @@
         android:layout_height="wrap_content"
         android:hint="  Password"
         android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:id="@+id/cpassin"
-        app:layout_constraintTop_toBottomOf="@id/cemailin"/>
+        android:id="@+id/password"
+        app:layout_constraintTop_toBottomOf="@id/email"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/clogin"
+        android:id="@+id/login"
         android:text="Log In"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/role"/>
@@ -75,52 +75,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Role :"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="#FF6F00"
         android:layout_marginTop="6dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/role"
-        app:layout_constraintTop_toBottomOf="@id/cpassin"
+        app:layout_constraintTop_toBottomOf="@id/password"
         app:layout_constraintStart_toStartOf="parent"/>
-    <RadioButton
+
+    <RadioGroup
+        android:id="@+id/checkState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Advisor"
-        android:textSize="24dp"
-        android:layout_marginLeft="24dp"
-        android:textColor="#FF6F00"
-        android:id="@+id/adv1"
-        app:layout_constraintStart_toEndOf="@id/role"
-        app:layout_constraintTop_toBottomOf="@id/cpassin"/>
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Client"
-        android:textSize="24dp"
-        android:textColor="#FF6F00"
-        android:layout_marginRight="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cpassin"/>
+        app:layout_constraintStart_toEndOf="@+id/role"
+        app:layout_constraintTop_toBottomOf="@+id/password">
+
+        <RadioButton
+            android:id="@+id/checkClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Client"
+            android:textColor="#FF6F00"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/checkAdvisor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Advisor"
+            android:textColor="#FF6F00"
+            android:textSize="24sp" />
+    </RadioGroup>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New User?"
         android:textColor="#FF6F00"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:id="@+id/new_user"
-        app:layout_constraintTop_toBottomOf="@id/clogin"
+        app:layout_constraintTop_toBottomOf="@id/login"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="74dp"
+        android:layout_marginStart="74dp"
         android:layout_marginTop="30dp"/>
+
     <Button
+        android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
         android:layout_marginTop="25dp"
+        android:text="Sign Up"
         app:layout_constraintStart_toEndOf="@id/new_user"
-        app:layout_constraintTop_toBottomOf="@id/clogin"/>
-
+        app:layout_constraintTop_toBottomOf="@id/login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

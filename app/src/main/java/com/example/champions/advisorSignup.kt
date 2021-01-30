@@ -11,11 +11,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import data.AdvisorData
 
 class advisorSignup : AppCompatActivity() {
     private val auth: FirebaseAuth = Firebase.auth
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val database: DatabaseReference = Firebase.database.reference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,11 +79,19 @@ class advisorSignup : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(baseContext, "Authentication Success.",
                                 Toast.LENGTH_SHORT).show()
-                        var user = AdvisorData(name.text.toString(),
-                                Number.text.toString(), Email.text.toString(),
-                        college.text.toString(),branch.text.toString())
-                        database.child("Advisor").child(userId.text.toString()).setValue(user)
-                        startActivity(Intent(this, advisorSignin::class.java))
+                        val user= auth.currentUser!!.uid
+                        val df: DocumentReference =db.collection("Users").document(user)
+                        val userInfo = hashMapOf(
+                            "Name" to name.text.toString(),
+                            "Email" to Email.text.toString(),
+                            "Mobile No" to Number.text.toString(),
+                            "College" to college.text.toString(),
+                            "Branch" to branch.text.toString(),
+                            "isUser" to "1",
+                            "isAdviser" to "1"
+                        )
+                        df.set(userInfo)
+                        startActivity(Intent(this, MainActivity::class.java))
                     } else {
                         Toast.makeText(baseContext, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show()
