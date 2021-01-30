@@ -46,10 +46,11 @@ class clientSignin : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(baseContext, "Login Succesful",
                         Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this,WelcomeClient::class.java))
                 }
                 else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(baseContext, "Login failed.",
+                    Toast.makeText(baseContext, "Login failed Try Again",
                         Toast.LENGTH_SHORT).show()
                 }
             }

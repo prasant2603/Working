@@ -22,22 +22,27 @@
         android:src="@drawable/congo2"
         android:id="@+id/congo2"
         app:layout_constraintTop_toBottomOf="@id/wel_client"/>
+
     <EditText
+        android:id="@+id/clientQuery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your Query"
-        android:textSize="24dp"
-        android:id="@+id/your_query"
         android:textColor="#18ffff"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/congo2"
-        android:layout_marginBottom="125dp"/>
+        app:layout_constraintTop_toBottomOf="@id/congo2" />
+
     <Button
+        android:id="@+id/wcSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="Submit"
-        app:layout_constraintTop_toBottomOf="@id/your_query"
-        android:layout_marginTop="56dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clientQuery" />
 
 
 

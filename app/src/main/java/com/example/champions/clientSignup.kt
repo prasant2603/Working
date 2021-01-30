@@ -11,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import data.User
 
 class clientSignup : AppCompatActivity() {
     private val auth: FirebaseAuth=Firebase.auth
@@ -82,7 +82,7 @@ class clientSignup : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(baseContext, "Authentication Success.",
                                 Toast.LENGTH_SHORT).show()
-                        var user=User(name.text.toString(),clientNumber.text.toString(),clientEmail.text.toString())
+                        var user= User(name.text.toString(),clientNumber.text.toString(),clientEmail.text.toString())
                         database.child("users").child(userId.text.toString()).setValue(user)
                         startActivity(Intent(this,clientSignin::class.java))
                     } else {
