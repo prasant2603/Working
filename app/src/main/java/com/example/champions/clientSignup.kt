@@ -5,14 +5,19 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class clientSignup : AppCompatActivity() {
     private val auth: FirebaseAuth=Firebase.auth
+    private val database:DatabaseReference=Firebase.database.reference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.clientsignup)
@@ -22,8 +27,24 @@ class clientSignup : AppCompatActivity() {
         }
     }
     private fun signup() {
+        val name: EditText=findViewById(R.id.clientName)
+        val clientNumber: EditText=findViewById(R.id.clientPhone)
         val clientEmail : EditText=findViewById(R.id.clientEmail)
         val clientPassword: EditText=findViewById(R.id.clientPassword)
+        val progressbar: ProgressBar=findViewById(R.id.progressBar)
+        if(name.text.toString().isEmpty())
+        {
+            name.error="Cannot be Empty"
+            name.requestFocus()
+            return
+        }
+        if(clientNumber.text.toString().isEmpty())
+        {
+            clientNumber.error="Cannot be Empty"
+            clientNumber.requestFocus()
+            return
+        }
+
         if(clientEmail.text.isEmpty())
         {
             clientEmail.error="Email Cannot be empty"
@@ -53,6 +74,8 @@ class clientSignup : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(baseContext, "Authentication Success.",
                                 Toast.LENGTH_SHORT).show()
+                        var user=User(name.text.toString(),clientNumber.text.toString())
+                        database.child("users").child(clientEmail.text.toString()).setValue(user)
                         startActivity(Intent(this,clientSignin::class.java))
                     } else {
                         Toast.makeText(baseContext, "Authentication failed.",

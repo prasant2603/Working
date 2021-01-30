@@ -9,30 +9,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SIGN UP"
-        android:textSize="31dp"
+        android:textSize="31sp"
         android:id="@+id/log_in1"
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
     <EditText
+        android:id="@+id/clientId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="@+id/clientName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/clientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:id="@+id/clientFirstname"
-        app:layout_constraintTop_toBottomOf="@id/log_in1"/>
+        android:hint="Full Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/log_in1" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last Name"
-        android:id="@+id/clientSecondname"
-        app:layout_constraintTop_toBottomOf="@id/clientFirstname"/>
-    <EditText
+        android:id="@+id/clientPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mobile Number"
-        android:id="@+id/clientPhone"
-        app:layout_constraintTop_toBottomOf="@id/clientSecondname"/>
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/clientName"
+        tools:ignore="TextFields" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,24 +52,37 @@
         android:inputType="textEmailAddress"
         android:id="@+id/clientEmail"
         app:layout_constraintTop_toBottomOf="@id/clientPhone"/>
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Country"
-        android:id="@+id/clientCountry"
-        app:layout_constraintTop_toBottomOf="@id/clientEmail"/>
-    <EditText
+        android:id="@+id/clientPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"
-        android:id="@+id/clientPassword"
-        app:layout_constraintTop_toBottomOf="@id/clientCountry"/>
+        app:layout_constraintBottom_toTopOf="@+id/clientSignup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clientEmail" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="submit"
         android:id="@+id/clientSignup"
         app:layout_constraintTop_toBottomOf="@id/clientPassword"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="296dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clientSignup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
