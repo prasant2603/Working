@@ -22,9 +22,16 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="User ID"
+        android:id="@+id/advisorId"
+        app:layout_constraintTop_toBottomOf="@id/log_in"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="Full Name"
         android:id="@+id/advisorName"
-        app:layout_constraintTop_toBottomOf="@id/log_in"/>
+        app:layout_constraintTop_toBottomOf="@id/advisorId"/>
 
     <EditText
         android:id="@+id/advisorMobile"
