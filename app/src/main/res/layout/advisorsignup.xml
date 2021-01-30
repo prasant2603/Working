@@ -19,56 +19,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First Name"
-        android:id="@+id/first_name"
+        android:id="@+id/advisorName"
         app:layout_constraintTop_toBottomOf="@id/log_in"/>
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last Name"
-        android:id="@+id/last_name"
-        app:layout_constraintTop_toBottomOf="@id/first_name"/>
-    <EditText
+        android:id="@+id/advisorMobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mobile Number"
-        android:id="@+id/phone"
-        app:layout_constraintTop_toBottomOf="@id/last_name"/>
+        app:layout_constraintTop_toBottomOf="@+id/advisorName" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-mail"
-        android:id="@+id/email"
-        app:layout_constraintTop_toBottomOf="@id/phone"/>
+        android:id="@+id/advisorEmail"
+        app:layout_constraintTop_toBottomOf="@id/advisorMobile"/>
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Country"
-        android:id="@+id/country"
-        app:layout_constraintTop_toBottomOf="@id/email"/>
-    <EditText
+        android:id="@+id/advisorCollege"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="College"
-        android:id="@+id/college"
-        app:layout_constraintTop_toBottomOf="@id/country"/>
+        app:layout_constraintTop_toBottomOf="@+id/advisorEmail" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Branch"
-        android:id="@+id/branch"
-        app:layout_constraintTop_toBottomOf="@id/college"/>
+        android:id="@+id/avisorBranch"
+        app:layout_constraintTop_toBottomOf="@id/advisorCollege"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:id="@+id/pass"
-        app:layout_constraintTop_toBottomOf="@id/branch"/>
+        android:id="@+id/advisorPassword"
+        app:layout_constraintTop_toBottomOf="@id/avisorBranch"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="submit"
-        android:id="@+id/submit"
-        app:layout_constraintTop_toBottomOf="@id/pass"/>
+        android:id="@+id/advisorSubmit"
+        app:layout_constraintTop_toBottomOf="@id/advisorPassword"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
