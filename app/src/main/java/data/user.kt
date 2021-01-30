@@ -1,4 +1,4 @@
-package com.example.champions
+package data
 
 
 data class User(
