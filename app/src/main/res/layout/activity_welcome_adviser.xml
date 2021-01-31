@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeAdviser">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FCF951"/>
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -13,7 +17,7 @@
         android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="Thank You For Being Our Part"
-        android:textColor="#FF6D00"
+        android:textColor="#422057"
         android:textSize="31sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:textColor="#FF6D00"
+        android:textColor="#422057"
         android:text="Latest Query"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="38dp"
-        android:textColor="#FF6D00"
+        android:textColor="#422057"
         android:layout_marginEnd="304dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,13 +55,13 @@
         android:id="@+id/sendRespond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="220dp"
-        android:text="Send"
-        android:layout_marginTop="65sp"
         android:layout_marginLeft="24sp"
+        android:layout_marginTop="65sp"
+        android:text="Send"
         android:textColor="#EEFF41"
-        app:layout_constraintTop_toBottomOf="@id/queryFetch"
-        app:layout_constraintStart_toEndOf="@id/queryRespond" />
+        app:backgroundTint="#422057"
+        app:layout_constraintStart_toEndOf="@id/queryRespond"
+        app:layout_constraintTop_toBottomOf="@id/queryFetch" />
 
     <EditText
         android:id="@+id/queryRespond"
