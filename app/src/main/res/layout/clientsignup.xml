@@ -15,27 +15,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
-        android:id="@+id/clientId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint=" UserId"
-        android:drawableStart="@drawable/ic_baseline_perm_identity_24"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/log_in1" />
 
     <EditText
         android:id="@+id/clientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" Full Name"
+        android:layout_marginTop="44dp"
         android:drawableStart="@drawable/ic_baseline_person_24"
+        android:hint=" Full Name"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clientId" />
+        app:layout_constraintTop_toBottomOf="@+id/log_in1" />
 
     <EditText
         android:id="@+id/clientPhone"
@@ -54,13 +46,6 @@
         android:inputType="textEmailAddress"
         android:id="@+id/clientEmail"
         app:layout_constraintTop_toBottomOf="@id/clientPhone"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint=" Role"
-        android:drawableStart="@drawable/ic_baseline_emoji_people_24"
-        android:id="@+id/role"
-        app:layout_constraintTop_toBottomOf="@id/clientPassword"/>
 
     <EditText
         android:id="@+id/clientPassword"
@@ -74,11 +59,13 @@
         app:layout_constraintTop_toBottomOf="@+id/clientEmail" />
 
     <Button
+        android:id="@+id/clientSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="submit"
-        android:id="@+id/clientSignup"
-        app:layout_constraintTop_toBottomOf="@id/role"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clientPassword" />
 
     <ProgressBar
         android:id="@+id/progressBar"

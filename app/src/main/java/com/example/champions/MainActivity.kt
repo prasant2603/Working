@@ -32,10 +32,12 @@ class MainActivity : AppCompatActivity() {
             val radioButton: RadioButton = findViewById(checkState.checkedRadioButtonId)
             if (radioButton.text.toString() == "Advisor") {
                 startActivity(Intent(this,advisorSignup::class.java))
+                finish()
             }
             else
             {
                 startActivity(Intent(this,clientSignup::class.java))
+                finish()
             }
         }
         else
@@ -105,6 +107,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(baseContext, "Login Succesful",
                             Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this,WelcomeClient::class.java))
+                        finish()
                     }
                     else
                     {

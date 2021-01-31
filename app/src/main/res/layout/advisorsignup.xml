@@ -19,19 +19,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="User ID"
-        android:id="@+id/advisorId"
-        app:layout_constraintTop_toBottomOf="@id/log_in"/>
 
     <EditText
+        android:id="@+id/advisorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:hint="Full Name"
-        android:id="@+id/advisorName"
-        app:layout_constraintTop_toBottomOf="@id/advisorId"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_in" />
 
     <EditText
         android:id="@+id/advisorMobile"
