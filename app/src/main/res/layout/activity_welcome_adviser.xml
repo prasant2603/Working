@@ -46,7 +46,6 @@
         android:layout_marginTop="38dp"
         android:textColor="#EEFF41"
         android:layout_marginEnd="304dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
