@@ -20,7 +20,6 @@ class WelcomeAdviser : AppCompatActivity() {
         setContentView(R.layout.activity_welcome_adviser)
         val queryFetch: TextView = findViewById(R.id.queryFetch)
         val sendResponse: Button = findViewById(R.id.sendRespond)
-        val textView:TextView=findViewById(R.id.textView3)
         var email: String? =null
         db.collection("Query").document("Client Query").get()
             .addOnSuccessListener { document ->
