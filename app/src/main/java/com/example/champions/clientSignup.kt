@@ -35,7 +35,6 @@ class clientSignup : AppCompatActivity() {
         val clientNumber: EditText=findViewById(R.id.clientPhone)
         val clientEmail : EditText=findViewById(R.id.clientEmail)
         val clientPassword: EditText=findViewById(R.id.clientPassword)
-        val progressbar: ProgressBar=findViewById(R.id.progressBar)
         var email:String=clientEmail.text.toString()
         if(name.text.toString().isEmpty())
         {
