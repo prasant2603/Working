@@ -155,6 +155,9 @@ class MainActivity : AppCompatActivity() {
             if(document.getString("isAdviser")=="1") {
                 Log.d("TAG", "DocumentSnapshot data: ${document.getString("isAdviser")}")
                 Toast.makeText(baseContext,"Login Succesful",Toast.LENGTH_SHORT).show()
+                var email:String=intent.getStringExtra("Email").toString()
+                var query:String=intent.getStringExtra("Query").toString()
+                val intent:Intent= Intent(this,WelcomeAdviser::class.java)
                 startActivity(Intent(this,WelcomeAdviser::class.java))
             } else {
                 Toast.makeText(baseContext,"Email or Password is Incorrect",Toast.LENGTH_SHORT).show()

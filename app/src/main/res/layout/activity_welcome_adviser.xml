@@ -13,7 +13,6 @@
         android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="Thank You For Being Our Part"
-        android:textAlignment="textStart"
         android:textColor="#d500f9"
         android:textSize="31sp"
         android:textStyle="bold|italic"
@@ -35,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/queryFeych"
+        android:id="@+id/queryFetch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -69,5 +68,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/queryFeych" />
+        app:layout_constraintTop_toBottomOf="@+id/queryFetch" />
 </androidx.constraintlayout.widget.ConstraintLayout>
