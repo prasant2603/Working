@@ -1,8 +1,11 @@
 package com.example.champions
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -15,14 +18,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val progressbar:ProgressBar=findViewById(R.id.mainprogress)
         val signin: Button = findViewById(R.id.login)
         val signup: Button = findViewById(R.id.signup)
         signin.setOnClickListener {
+            progressbar.visibility= View.VISIBLE
             signin()
+            closeKeyboard()
         }
         signup.setOnClickListener {
+            progressbar.visibility= View.VISIBLE
             signup()
         }
+    }
+
+    private fun closeKeyboard() {
+        val view=this.currentFocus
+        val inputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view!!.windowToken, 0)
     }
 
     private fun signup() {
@@ -159,6 +173,7 @@ class MainActivity : AppCompatActivity() {
                 var query:String=intent.getStringExtra("Query").toString()
                 val intent:Intent= Intent(this,WelcomeAdviser::class.java)
                 startActivity(Intent(this,WelcomeAdviser::class.java))
+                finish()
             } else {
                 Toast.makeText(baseContext,"Email or Password is Incorrect",Toast.LENGTH_SHORT).show()
             }
