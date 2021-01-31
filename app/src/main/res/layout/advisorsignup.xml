@@ -6,31 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".advisorSignup">
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#64ffda"/>
-
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/pns2"
+        android:id="@+id/pns2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/log_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:fontFamily="cursive"
-        android:text="SIGN UP"
-        android:textColor="@color/purple_700"
+        android:text="Create Account"
+        android:textColor="#FF6D00"
         android:textSize="31sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/pns2" />
 
     <EditText
         android:id="@+id/advisorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:hint="Full Name"
+        android:hint=" Full Name"
+        android:drawableStart="@drawable/ic_baseline_person_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,12 +44,14 @@
         android:id="@+id/advisorMobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mobile Number"
+        android:hint=" Mobile Number"
+        android:drawableStart="@drawable/ic_baseline_phone_android_24"
         app:layout_constraintTop_toBottomOf="@+id/advisorName" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail"
+        android:hint=" Email"
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:id="@+id/advisorEmail"
         app:layout_constraintTop_toBottomOf="@id/advisorMobile"/>
 
@@ -53,18 +59,21 @@
         android:id="@+id/advisorCollege"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="College"
+        android:hint=" College"
+        android:drawableStart="@drawable/ic_baseline_school_24"
         app:layout_constraintTop_toBottomOf="@+id/advisorEmail" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Branch"
+        android:hint=" Branch"
+        android:drawableStart="@drawable/ic_baseline_engineering_24"
         android:id="@+id/avisorBranch"
         app:layout_constraintTop_toBottomOf="@id/advisorCollege"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint=" Password"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:id="@+id/advisorPassword"
         app:layout_constraintTop_toBottomOf="@id/avisorBranch"/>
     <Button
