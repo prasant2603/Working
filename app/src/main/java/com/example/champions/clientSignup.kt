@@ -31,7 +31,6 @@ class clientSignup : AppCompatActivity() {
         }
     }
     private fun signup() {
-        val userId:EditText=findViewById(R.id.clientId)
         val name: EditText=findViewById(R.id.clientName)
         val clientNumber: EditText=findViewById(R.id.clientPhone)
         val clientEmail : EditText=findViewById(R.id.clientEmail)
@@ -42,12 +41,6 @@ class clientSignup : AppCompatActivity() {
         {
             name.error="Cannot be Empty"
             name.requestFocus()
-            return
-        }
-        if(userId.text.toString().isEmpty())
-        {
-            userId.error="Cannot be Empty"
-            userId.requestFocus()
             return
         }
         if(clientNumber.text.toString().isEmpty())

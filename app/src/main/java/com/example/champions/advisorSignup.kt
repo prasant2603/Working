@@ -30,7 +30,6 @@ class advisorSignup : AppCompatActivity() {
     }
 
     private fun signup() {
-        val userId: EditText = findViewById(R.id.advisorId)
         val name: EditText = findViewById(R.id.advisorName)
         val Number: EditText = findViewById(R.id.advisorMobile)
         val Email: EditText = findViewById(R.id.advisorEmail)

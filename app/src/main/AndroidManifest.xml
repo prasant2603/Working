@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CHAMPIONS">
-        <activity android:name=".WelcomeClient"></activity>
+        <activity android:name=".WelcomeAdviser"></activity>
+        <activity android:name=".WelcomeClient" />
         <activity android:name=".clientSignin" />
         <activity android:name=".advisorSignin" />
         <activity android:name=".clientSignup" />
