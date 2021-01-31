@@ -9,16 +9,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#64ffda"/>
+
     <TextView
+        android:id="@+id/log_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="cursive"
         android:text="SIGN UP"
-        android:textSize="31dp"
-        android:id="@+id/log_in"
         android:textColor="@color/purple_700"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="31sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/advisorName"
